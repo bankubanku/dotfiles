@@ -27,6 +27,8 @@
 import os 
 import subprocess
 
+import psutil
+
 from libqtile import bar, layout, widget, extension, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
@@ -163,41 +165,36 @@ powerline = {
     ]
 }
 
-
-
-screens = [
-    Screen(
-        wallpaper='~/.config/wallpaper/wired.jpg',
-        wallpaper_mode='stretch',
-        top=bar.Bar(
-            [
+widgets = [
                 widget.GroupBox(highlight_method='text', block_highlight_text_color='#c6f0fa', fontsize=12, active=flamingo, inactive=subtext),
                 widget.Sep(foreground=text),
                 widget.WindowTabs(foreground=text, **powerline),
                 widget.Clock(padding=10, format="%d:%m:%Y %a %H:%M", background=blue, **powerline),
-                widget.CurrentLayout(padding=10, background=mauve), # scaling=0.5 
+                widget.CurrentLayout(padding=10, background=mauve),
                 
-            ],
-            30,
-            background=base,
+            ]
 
-        ),
+
+if psutil.sensors_battery() is not None:
+    widgets.insert(3, widget.Battery(padding=10, background=mauve, **powerline))
+
+screens = [
+    Screen(
+        wallpaper='~/dotfiles/wallpapers/wired.jpg', # wallpaper from my dotfiles repo 
+        wallpaper_mode='stretch',
+        top=bar.Bar(widgets,30,background=base),
     ),
     Screen(
         wallpaper='~/.config/wallpaper/wired.jpg',
         wallpaper_mode='stretch',
         top=bar.Bar(
             [
-                #widget.GroupBox(highlight_method='text', block_highlight_text_color='#c6f0fa', fontsize=12, active=flamingo, inactive=subtext),
-                #widget.Sep(foreground=text),
                 widget.WindowTabs(foreground=text, **powerline),
                 widget.Clock(padding=10, format="%d:%m:%Y %a %H:%M", background=blue, **powerline),
-                widget.CurrentLayout(padding=10, background=mauve), # scaling=0.5 
-                
+                widget.CurrentLayout(padding=10, background=mauve)
             ],
             30,
-            background=base,
-
+            background=base
         ),
     ),
 ]
