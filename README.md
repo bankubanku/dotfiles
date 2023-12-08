@@ -9,7 +9,7 @@ git clone https://github.com/bankubanku/dotfiles.git
 Go to specific subdirectory to see more details about installation of specific config
 
 # credits 
-Thanks to Wiktoria, for reviewing and helping me organize my dotfiles :3 
+Thanks to [Victoria](https://github.com/holykremowka2137) for reviewing and helping me organize my dotfiles :3 
 
 # contributions 
 Well... since these config files are personalized, I don't accept any pull requests.
