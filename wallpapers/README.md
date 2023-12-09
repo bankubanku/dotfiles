@@ -1,2 +1,2 @@
 # wallpapers
-just wallpapers, I mean one wallpaper (for now) 
+just wallpapers I found in the internet
