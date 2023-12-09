@@ -9,5 +9,17 @@ Rows=1
 [Tiling]
 padding=4
 
+[Tiling][12fbaae9-3238-5d62-9c41-46262dac5a2d]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
 [Tiling][213a9620-187e-58a6-b80b-85d8fb95dfce]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[Tiling][59688f6b-7b09-5cc9-9c58-a6f0db73fd3f]
+tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
+
+[org.kde.kdecoration2]
+BorderSize=Tiny
+BorderSizeAuto=false
+library=org.kde.kwin.aurorae
+theme=__aurorae__svg__GruvboxAurorae
