@@ -1,5 +1,5 @@
 # alacritty config 
-It is just copy-paste config from [catppuccin](https://github.com/catppuccin) profile. I included it in my own repo to keep everything in one place and leave myself the ability to customize it in the future, but for now I recomend checking the [original repo](https://github.com/catppuccin/alacritty). 
+It is just copy-paste config from [alacritty](https://github.com/alacritty) profile. I included it in my own repo to keep everything in one place and leave myself the ability to customize it in the future, but for now I recomend checking the [original repo](https://github.com/alacritty/alacritty-theme). 
 
 # installation 
 ## prerequisites 
@@ -17,7 +17,6 @@ rm -rf ~/.config/alacritty/alacritty.yml
 create symbolic links 
 ```shell
 ln -s ~/dotfiles/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-ln -s ~/dotfiles/alacritty/catppuccin-macchiato.yml ~/.config/alacritty/catppuccin-macchiato.yml
 ```
 
 ## copying 
