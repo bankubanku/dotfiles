@@ -37,6 +37,8 @@ from libqtile.utils import guess_terminal
 from qtile_extras import widget
 from qtile_extras.widget.decorations import RectDecoration, BorderDecoration, PowerLineDecoration
 
+from libqtile import hook
+
 mod = "mod4"
 terminal = 'alacritty'#guess_terminal()
 
@@ -246,6 +248,10 @@ wl_input_rules = None
 # java that happens to be on java's whitelist.
 wmname = "LG3D"
 
+@hook.subscribe.startup_once
+def start_dunst():
+    import subprocess
+    subprocess.Popen(["dunst"])
 
 # @hook.subscribe.startup
 # def autostart():
