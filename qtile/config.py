@@ -68,7 +68,7 @@ keys = [
         desc="Grow window to the right"),
     Key([mod, "control"], "j", lazy.layout.grow_down(), desc="Grow window down"),
     Key([mod, "control"], "k", lazy.layout.grow_up(), desc="Grow window up"),
-    Key([mod], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
+    Key([mod, "control"], "n", lazy.layout.normalize(), desc="Reset all window sizes"),
     # Toggle between split and unsplit sides of stack.
     # Split = all windows displayed
     # Unsplit = 1 window displayed, like Max layout, but still with
@@ -79,7 +79,7 @@ keys = [
         lazy.layout.toggle_split(),
         desc="Toggle between split and unsplit sides of stack",
     ),
-    #Key([mod], "t", lazy.spawn(terminal), desc="Launch terminal"),
+    # Key([mod], "t", lazy.spawn(terminal), desc="Launch terminal"),
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
@@ -88,18 +88,25 @@ keys = [
     # Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
 
     # My custom keybindigs
-    #Key([mod], 'r', lazy.run_extension(extension.DmenuRun(background='#333333'))),
     Key([], 'Print', lazy.spawn('flameshot gui')),
     Key([mod], 'r', lazy.spawn('rofi -show drun')),
     Key([mod], 'e', lazy.spawn('rofi -show window')),
     Key([mod], "t", lazy.spawn(terminal), desc="Launch terminal"),
     Key([mod], "comma", lazy.spawn('betterlockscreen -l'), desc="Lock screen"),
     Key([mod], 'period', lazy.next_screen(), desc='Next monitor'),
-    #Key([mod], 'o', lazy.run_extension(extension.WindowsList())),
+    Key([mod], "n", lazy.spawn('kill -s USR1 \$(pidof deadd-notification-center)'))
 ]
 
-groups = [Group('1', label=""), Group('2', label="", spawn="librewolf"), Group('3', label="", spawn="alacritty"), Group('4', label=""), Group(
-    '5', label=""), Group('6', label=""), Group('7', label=""), Group('8', label=""), Group('9', label="", spawn="obsidian")]
+groups = [
+    Group('1', label=""),
+    Group('2', label="", spawn="librewolf"),
+    Group('3', label="", spawn="alacritty"),
+    Group('4', label=""),
+    Group('5', label=""),
+    Group('6', label=""),
+    Group('7', label=""),
+    Group('8', label=""),
+    Group('9', label="", spawn="obsidian")]
 
 for i in groups:
     keys.extend(
@@ -249,9 +256,9 @@ wl_input_rules = None
 wmname = "LG3D"
 
 @hook.subscribe.startup_once
-def start_dunst():
+def start_deadd():
     import subprocess
-    subprocess.Popen(["dunst"])
+    subprocess.Popen(["deadd-notification-center"])
 
 # @hook.subscribe.startup
 # def autostart():
