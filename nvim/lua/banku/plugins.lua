@@ -1,3 +1,9 @@
+-- [[ Configure plugins ]]
+-- NOTE: Here is where you install your plugins.
+--  You can configure plugins using the `config` key.
+--
+--  You can also configure plugins after the setup call,
+--    as they will be available in your neovim runtime.
 return {
   -- NOTE: First, some plugins that don't require any configuration
 
@@ -197,7 +203,7 @@ return {
       }
   },
   {'romgrk/barbar.nvim',
-      dependencies = {
+        dependencies = {
         'lewis6991/gitsigns.nvim', -- OPTIONAL: for git status
         'nvim-tree/nvim-web-devicons', -- OPTIONAL: for file icons
       },
@@ -209,8 +215,9 @@ return {
         -- …etc.
       },
       version = '^1.0.0', -- optional: only update when a new 1.x version is released
-    },
-  -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
+      enabled = false,
+  },
+-- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
   -- require 'kickstart.plugins.autoformat',
