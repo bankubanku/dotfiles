@@ -1,42 +1,65 @@
--- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
-
 -- Set highlight on search
-vim.o.hlsearch = false
+vim.opt.hlsearch = false
 
--- Make line numbers default
-vim.wo.number = true
+-- shows the matches for the current search pattern as you type it 
+vim.opt.incsearch = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a' -- this option let user use mouse in all modes 
+vim.opt.mouse = 'a'
 
 -- Sync clipboard between OS and Neovim.
-vim.o.clipboard = 'unnamedplus'
-
--- Enable break indent; smart wrap (i think?)
-vim.o.breakindent = true
+vim.opt.clipboard = 'unnamedplus'
 
 -- Save undo history
-vim.o.undofile = true
+vim.opt.undofile = true
 
 -- Case-insensitive searching 
-vim.o.ignorecase = true
--- UNLESS \C or capital in search
-vim.o.smartcase = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 -- this column next to the line number column
-vim.wo.signcolumn = 'yes'
+vim.opt.signcolumn = 'yes'
 
 -- saves buffer to swap after given time
-vim.o.updatetime = 250
+vim.opt.updatetime = 250
+
 -- set amount of time to wait for a key code sequence to complete 
-vim.o.timeoutlen = 300
+vim.opt.timeoutlen = 300
 
 -- changes completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.opt.completeopt = 'menuone,noselect'
 
--- checks host termina's capability and enables 24-bit RGB color
+-- checks host terminal's capability and enables 24-bit RGB color
 -- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+vim.opt.termguicolors = true
 
+-- enabling the column of number on the left 
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+-- highlight the line where cursor is currently positioned 
+vim.opt.cursorline = true
+vim.opt.cursorlineopt = 'number,line'
+
+-- sets up number of lines to keep above and below the cursor when scrolling 
+vim.opt.scrolloff = 10
+
+-- neovim analyzes the code and controls indentation based on the syntax 
+vim.opt.smartindent = true
+
+-- size of indentation
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+
+-- automaticaly indents the indentation level of current line when you start a new line 
+vim.opt.autoindent = true
+
+-- maintains the indentation level, even if the new line is wrapped 
+vim.opt.breakindent = true
+
+-- wraps line when it is no longer visible in neovim window 
+vim.opt.wrap = true
+
+-- controls wrapping based on breakat option (only specified character) 
+vim.opt.linebreak = true
