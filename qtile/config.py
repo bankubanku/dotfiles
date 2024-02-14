@@ -40,6 +40,10 @@ from libqtile import hook
 mod = "mod4"
 terminal = 'alacritty'
 
+
+def open_notification_center(qtile):
+    subprocess.run('kill -s USR1 $(pidof deadd-notification-center)', shell=True) 
+
 keys = [
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
@@ -92,6 +96,7 @@ keys = [
     Key([mod], 'r', lazy.spawn('rofi -show drun')),
     Key([mod], 'e', lazy.spawn('rofi -show window')),
     Key([mod], "t", lazy.spawn(terminal), desc="Launch terminal"),
+    Key([mod], "n", lazy.function(open_notification_center), desc="notification center"),
 
     # lock screen 
     Key([mod], "comma", lazy.spawn('betterlockscreen -l'), desc="Lock screen"),
@@ -251,4 +256,3 @@ wmname = "LG3D"
 @hook.subscribe.startup_once
 def start_deadd():
     subprocess.Popen(["deadd-notification-center"])
-
