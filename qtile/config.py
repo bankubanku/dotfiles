@@ -39,6 +39,25 @@ from libqtile import hook
 
 mod = "mod4"
 terminal = 'alacritty'
+do_not_disturb = False
+
+
+def clear_notifications(qtile):
+    subprocess.run('notify-send.py a --hint boolean:deadd-notification-center:true string:type:clearInCenter', shell=True)
+
+'''
+    work in progress
+'''
+# def mute_notifications(qtile):
+#     global do_not_disturb
+#     if do_not_disturb:
+#         subprocess.run('notify-send "do not disturb: enabled"', shell=True)
+#         subprocess.run('notify-send.py a --hint boolean:deadd-notification-center:true string:type:unpausePopups', shell=True)
+#         do_not_disturb = True
+#     else: 
+#         subprocess.run('notify-send.py a --hint boolean:deadd-notification-center:true string:type:pausePopups', shell=True)
+#         subprocess.run('notify-send "do not disturb: disabled', shell=True)
+#         do_not_disturb = False
 
 
 def open_notification_center(qtile):
@@ -96,7 +115,9 @@ keys = [
     Key([mod], 'r', lazy.spawn('rofi -show drun')),
     Key([mod], 'e', lazy.spawn('rofi -show window')),
     Key([mod], "t", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "n", lazy.function(open_notification_center), desc="notification center"),
+    Key([mod], "n", lazy.function(open_notification_center)),
+    # Key([mod], "m", lazy.function(mute_notifications)),
+    Key([mod], "b", lazy.function(clear_notifications)),
 
     # lock screen 
     Key([mod], "comma", lazy.spawn('betterlockscreen -l'), desc="Lock screen"),
