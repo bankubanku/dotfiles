@@ -3,7 +3,18 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = {
       -- Automatically install LSPs to stdpath for neovim
-      { 'williamboman/mason.nvim', config = true },
+      { 'williamboman/mason.nvim',
+      config = true,
+      opts = {
+        ensure_installed = {
+          "typescript-language-server",
+          "pyright",
+          "bash-language-server",
+          "lua-language-server",
+          "prettier",
+        },
+      },
+      },
       'williamboman/mason-lspconfig.nvim',
 
       -- Useful status updates for LSP

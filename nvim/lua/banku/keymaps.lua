@@ -22,3 +22,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- neotree 
 vim.keymap.set('n', '<leader>n', '<Cmd>Neotree<CR>', {desc = 'Open neotree for files', silent = true })
+
+-- formating
+vim.keymap.set('n', '<leader>l', '<Cmd>Format<CR>', {desc = 'Format code', silent = true })

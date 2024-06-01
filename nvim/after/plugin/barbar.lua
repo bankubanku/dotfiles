@@ -20,7 +20,7 @@ vim.keymap.set('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
 vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
 
 -- close cmds
-vim.keymap.set('n', '<A-c>', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
+vim.keymap.set('n', '<A-a>', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>', opts)
 
 -- sorting 
 vim.keymap.set('n', '<A-b>', '<Cmd>BufferOrderByBufferNumber<CR>', opts)

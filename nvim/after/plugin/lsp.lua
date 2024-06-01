@@ -85,6 +85,7 @@ local servers = {
     },
   },
   bashls = {},
+  tsserver = { preferences = { disableSuggestions = true } },
 }
 
 -- Setup neovim lua configuration

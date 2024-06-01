@@ -24,7 +24,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import subprocess
+import subprocess, os
 
 import psutil
 
@@ -203,6 +203,7 @@ widgets = [
                 widget.GroupBox(highlight_method='text', block_highlight_text_color='#c6f0fa', fontsize=12, active=flamingo, inactive=subtext),
                 widget.Sep(foreground=text),
                 widget.WindowTabs(foreground=text, **powerline),
+                widget.Systray(padding=10, **powerline),
                 widget.Clock(padding=10, format="%d:%m:%Y %a %H:%M", background=blue, **powerline),
                 widget.CurrentLayout(padding=10, background=mauve),
                 
@@ -210,7 +211,7 @@ widgets = [
 
 
 if psutil.sensors_battery() is not None:
-    widgets.insert(3, widget.Battery(padding=10, background=mauve, **powerline))
+    widgets.insert(4, widget.Battery(padding=10, background=mauve, **powerline))
 
 screens = [
     Screen(
@@ -272,6 +273,12 @@ wl_input_rules = None
 
 # for java apps to work
 wmname = "LG3D"
+
+
+@hook.subscribe.startup_once
+def autostart():
+    subprocess.Popen([os.path.expanduser('/home/banku/dotfiles/qtile/autostart.sh')])
+    subprocess.Popen(["aw-qt"])
 
 
 @hook.subscribe.startup_once
