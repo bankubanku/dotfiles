@@ -9,7 +9,7 @@ if [ "$answer != "y" || "$answer != "Y" ]; then
 fi
 
 sudo pacman -Syyu
-sudo pacman -S rsync gvim alacritty bluez bluez-utils flameshot man-db nemo obsidian obs-studio qtile rofi signal-desktop syncthing ttf-jetbrains-mono-nerd ufw zip unzip wget noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra virtualbox lightdm lightdm-gtk-greeter pipewire pipewire-audio pipewire-alsa pipewire-pulse dosfstools efibootmgr gimp github-cli htop inkscape libreoffice-still mtools neovim nodejs npm p7zip python-dbus-next python-pip python-pipx python-psuutil ripgrep rofi signal-desktop skanlite syncthing sysfsutils tree ttf-roboto-slab lutris xclip   
+sudo pacman -S rsync gvim alacritty bluez bluez-utils flameshot man-db nemo obsidian obs-studio qtile rofi signal-desktop syncthing ttf-jetbrains-mono-nerd ufw zip unzip wget noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra virtualbox lightdm lightdm-gtk-greeter pipewire pipewire-audio pipewire-alsa pipewire-pulse dosfstools efibootmgr gimp github-cli htop inkscape libreoffice-still mtools neovim nodejs npm p7zip python-dbus-next python-pip python-pipx python-psutil ripgrep rofi signal-desktop skanlite syncthing sysfsutils tree lutris xclip   
 echo "packages from official arch repo installed"
 
 amd=`cat /proc/cpuinfo | grep -i amd`
