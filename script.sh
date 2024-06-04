@@ -4,7 +4,7 @@
 echo "This configuration uses dependencies from aur. If you want to avoid using software from AUR, reconsider changing this configuration for your needs :3"
 read -p "Do you still want to continue? (y/n): " answer
 
-if [ "$answer -ne "y" || "$answer -ne "Y" ]; then 
+if [ "$answer -ne "y"" ]; then 
     exit 1
 fi
 
