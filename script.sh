@@ -47,7 +47,6 @@ mv ~/.config/deadd ~/.config/_dead
 echo "backed up config files"
 
 ln -s ${pwd}/alacritty ~/.config/alacritty
-mkdir ~/.config/deadd/
 ln -s ${pwd}/deadd ~/.config/deadd
 ln -s ${pwd}/nvim ~/.config/nvim
 ln -s ${pwd}/qtile ~/.config/qtile
