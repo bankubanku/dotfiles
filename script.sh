@@ -41,16 +41,19 @@ pwd=`pwd`
 
 mv ~/.config/alacritty ~/.config/_alacritty
 mv ~/.config/nvim/  ~/.config/_nvim/
-mv ~/.config/qtile/config.py ~/.config/qtile/_config.py
+mv ~/.config/qtile ~/.config/_qtile
 mv ~/.config/rofi/config.rasi  ~/.config/rofi/_config.rasi
-mv ~/.config/deadd/ ~/.config/_dead
+mv ~/.config/deadd ~/.config/_dead
 echo "backed up config files"
 
 ln -s ${pwd}/alacritty ~/.config/alacritty
-ln -s ${pwd}/deadd ~/.config/deadd/
+mkdir ~/.config/deadd/
+ln -s ${pwd}/deadd ~/.config/deadd
 ln -s ${pwd}/nvim ~/.config/nvim
-ln -s ${pwd}/qtile/config.py ~/.config/qtile/config.py
+ln -s ${pwd}/qtile ~/.config/qtile
+mkdir ~/.config/rofi/
 ln -s ${pwd}/rofi/config.rasi ~/.config/rofi/config.rasi
+mkdir -p ~/.local/share/rofi/themes/
 ln -s ${pwd}/rofi/catppuccin-frappe.rasi ~/.local/share/rofi/themes/catppuccin-frappe.rasi
 echo "created symbolic links for config files"
 
