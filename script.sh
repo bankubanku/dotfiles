@@ -46,12 +46,12 @@ mv ~/.config/rofi/config.rasi  ~/.config/rofi/_config.rasi
 mv ~/.config/deadd/ ~/.config/_dead
 echo "backed up config files"
 
-ln -s ${pwd}/dotfiles/alacritty ~/.config/alacritty
-ln -s ${pwd}/dotfiles/deadd ~/.config/deadd/
-ln -s ${pwd}/dotfiles/nvim ~/.config/nvim
-ln -s ${pwd}/dotfiles/qtile/config.py ~/.config/qtile/config.py
-ln -s ${pwd}/dotfiles/rofi/config.rasi ~/.config/rofi/config.rasi
-ln -s ${pwd}/dotfiles/rofi/catppuccin-frappe.rasi ~/.local/share/rofi/themes/catppuccin-frappe.rasi
+ln -s ${pwd}/alacritty ~/.config/alacritty
+ln -s ${pwd}/deadd ~/.config/deadd/
+ln -s ${pwd}/nvim ~/.config/nvim
+ln -s ${pwd}/qtile/config.py ~/.config/qtile/config.py
+ln -s ${pwd}/rofi/config.rasi ~/.config/rofi/config.rasi
+ln -s ${pwd}/rofi/catppuccin-frappe.rasi ~/.local/share/rofi/themes/catppuccin-frappe.rasi
 echo "created symbolic links for config files"
 
 echo "now your OS will reboot"
