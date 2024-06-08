@@ -279,6 +279,7 @@ wmname = "LG3D"
 def autostart():
     subprocess.Popen([os.path.expanduser('/home/banku/dotfiles/qtile/autostart.sh')])
     subprocess.Popen(["aw-qt"])
+    subprocess.Popen(["/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"])
 
 
 @hook.subscribe.startup_once
